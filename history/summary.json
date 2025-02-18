@@ -23,19 +23,17 @@
     "icon": "https://discover.brieftech.ai/favicon.ico",
     "slug": "back-end-prod",
     "status": "up",
-    "uptime": "2.66%",
-    "uptimeDay": "2.66%",
-    "uptimeWeek": "2.66%",
-    "uptimeMonth": "2.66%",
-    "uptimeYear": "2.66%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 297,
     "timeDay": 297,
     "timeWeek": 297,
     "timeMonth": 297,
     "timeYear": 297,
-    "dailyMinutesDown": {
-      "2025-02-18": 2
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Home Page",
