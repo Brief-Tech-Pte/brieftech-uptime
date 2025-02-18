@@ -7,6 +7,8 @@ sites:
     url: https://discover.brieftech.ai
   - name: Back End (Prod)
     url: https://asia-southeast1-brief-tech.cloudfunctions.net/genCall2
+    icon: https://discover.brieftech.ai/favicon.ico
+    method: POST
     headers:
       - "Content-Type: application/json"
     body: '{"data":{"function":"getVersionInfo","syncVersion":8}}'
