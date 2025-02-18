@@ -5,6 +5,11 @@ repo: brieftech-uptime # The name of this repository
 sites:
   - name: Front End (Prod)
     url: https://discover.brieftech.ai
+  - name: Back End (Prod)
+    url: https://asia-southeast1-brief-tech.cloudfunctions.net/genCall2
+    headers:
+      - "Content-Type: application/json"
+    body: '{"data":{"function":"getVersionInfo","syncVersion":8}}'
   - name: Home Page
     url: https://brieftech.ai
 
