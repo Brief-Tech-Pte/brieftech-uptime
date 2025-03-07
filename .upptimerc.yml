@@ -29,6 +29,6 @@ status-website:
     - title: Status
       href: /
     - title: Network Test
-      href: /brieftech-uptime/network.html
+      href: /network.html
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
