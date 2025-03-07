@@ -28,6 +28,7 @@ status-website:
   navbar:
     - title: Status
       href: /
-
+    - title: Network Test
+      href: /network.html
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
