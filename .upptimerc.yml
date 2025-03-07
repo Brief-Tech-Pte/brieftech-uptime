@@ -18,8 +18,8 @@ sites:
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  # cname: demo.upptime.js.org
-  baseUrl: /brieftech-uptime
+  cname: status.brieftech.ai
+  # baseUrl: /brieftech-uptime
   logoUrl: https://discover.brieftech.ai/icons/safari-pinned-tab.svg
   name: BriefTech Status
   introTitle: "BriefTech Uptime Server Status Monitoring"
