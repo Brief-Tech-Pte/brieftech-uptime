@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Connectivity Check</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        text-align: center;
+      }
+      table {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        background: #f4f4f4;
+      }
+      .status {
+        font-weight: bold;
+      }
+      .accessible {
+        color: green;
+      }
+      .blocked {
+        color: red;
+      }
+      .copy-icon {
+        cursor: pointer;
+        margin-left: 8px;
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Network Connectivity Check</h2>
+    <p>
+      Checking if your network allows access to essential BriefTech services...
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="results">
+        <!-- Results will be inserted here -->
+      </tbody>
+    </table>
+
+    <script>
+      const domains = [
+        {
+          name: "Frontend Web Page",
+          url: "https://discover.brieftech.ai/favicon.ico",
+          type: "img",
+          whitelist: "https://discover.brieftech.ai",
+        },
+        {
+          name: "Backend Service",
+          url: "https://us-central1-brief-tech-qa.cloudfunctions.net/ping",
+          type: "img",
+          whitelist: "https://us-central1-brief-tech-qa.cloudfunctions.net",
+        },
+        {
+          name: "Firestore API",
+          url: "https://firestore.googleapis.com/v1/projects/brief-tech/databases/(default)/documents/test",
+          type: "api",
+          whitelist: "https://firestore.googleapis.com",
+        },
+        {
+          name: "Authentication Service",
+          url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=API_KEY",
+          type: "api",
+          whitelist: "https://identitytoolkit.googleapis.com",
+        },
+        {
+          name: "Firebase Storage",
+          url: "https://firebasestorage.googleapis.com/v0/b/brief-tech-qa.firebasestorage.app/o/favicon.ico?alt=media",
+          type: "img",
+          whitelist:
+            "https://firebasestorage.googleapis.com/v0/b/brief-tech-qa.firebasestorage.app",
+        },
+        {
+          name: "Google Accounts",
+          url: "https://accounts.google.com/favicon.ico",
+          type: "img",
+          whitelist: "https://accounts.google.com",
+        },
+        {
+          name: "Google CDN",
+          url: "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js",
+          type: "script",
+          whitelist: "https://www.gstatic.com",
+        },
+        {
+          name: "Google Fonts",
+          url: "https://fonts.googleapis.com/css?family=Roboto",
+          type: "link",
+          whitelist: "https://fonts.googleapis.com",
+        },
+      ];
+
+      function runCheck() {
+        const resultsTable = document.getElementById("results");
+        resultsTable.innerHTML = "";
+
+        domains.forEach((service) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                      <td>
+                          ${service.name}
+                          <span class="copy-icon" onclick="copyToClipboard('${service.whitelist}')">📋</span>
+                      </td>
+                      <td class="status">Checking...</td>
+                  `;
+          resultsTable.appendChild(row);
+
+          checkDomain(service.url, service.type, row.querySelector(".status"));
+        });
+      }
+
+      function checkDomain(url, type, statusCell) {
+        if (type === "img") {
+          const img = new Image();
+          img.src = url;
+          img.onload = () => {
+            statusCell.textContent = "Accessible";
+            statusCell.classList.add("accessible");
+          };
+          img.onerror = () => {
+            statusCell.textContent = "Blocked";
+            statusCell.classList.add("blocked");
+          };
+        } else if (type === "script") {
+          const script = document.createElement("script");
+          script.src = url;
+          script.onload = () => {
+            statusCell.textContent = "Accessible";
+            statusCell.classList.add("accessible");
+          };
+          script.onerror = () => {
+            statusCell.textContent = "Blocked";
+            statusCell.classList.add("blocked");
+          };
+          document.body.appendChild(script);
+        } else if (type === "link") {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = url;
+          link.onload = () => {
+            statusCell.textContent = "Accessible";
+            statusCell.classList.add("accessible");
+          };
+          link.onerror = () => {
+            statusCell.textContent = "Blocked";
+            statusCell.classList.add("blocked");
+          };
+          document.head.appendChild(link);
+        } else if (type === "api") {
+          // Handle Firestore, Auth, and API endpoints
+          fetch(url, { method: "GET", mode: "no-cors" })
+            .then(() => {
+              statusCell.textContent = "Accessible";
+              statusCell.classList.add("accessible");
+            })
+            .catch(() => {
+              statusCell.textContent = "Blocked";
+              statusCell.classList.add("blocked");
+            });
+        }
+      }
+
+      function copyToClipboard(text) {
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            alert("Copied: " + text);
+          })
+          .catch((err) => {
+            console.error("Could not copy text: ", err);
+          });
+      }
+
+      window.onload = runCheck;
+    </script>
+  </body>
+</html>
