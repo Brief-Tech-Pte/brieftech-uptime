@@ -33,7 +33,9 @@
     "timeWeek": 374,
     "timeMonth": 354,
     "timeYear": 366,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-04-12": 0
+    }
   },
   {
     "name": "Home Page",
