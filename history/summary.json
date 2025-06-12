@@ -23,18 +23,18 @@
     "icon": "https://discover.brieftech.ai/favicon.ico",
     "slug": "back-end-prod",
     "status": "down",
-    "uptime": "46.79%",
+    "uptime": "46.49%",
     "uptimeDay": "0.00%",
     "uptimeWeek": "0.00%",
     "uptimeMonth": "0.00%",
-    "uptimeYear": "46.79%",
+    "uptimeYear": "46.49%",
     "time": 351,
     "timeDay": 237,
     "timeWeek": 315,
     "timeMonth": 315,
     "timeYear": 351,
     "dailyMinutesDown": {
-      "2025-06-12": 31,
+      "2025-06-12": 1095,
       "2025-06-11": 1440,
       "2025-06-10": 1440,
       "2025-06-09": 1440,
@@ -103,17 +103,19 @@
     "url": "https://brieftech.ai",
     "icon": "https://icons.duckduckgo.com/ip3/brieftech.ai.ico",
     "slug": "home-page",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 661,
-    "timeDay": 357,
-    "timeWeek": 547,
-    "timeMonth": 554,
-    "timeYear": 661,
-    "dailyMinutesDown": {}
+    "time": 743,
+    "timeDay": 5714,
+    "timeWeek": 1862,
+    "timeMonth": 883,
+    "timeYear": 743,
+    "dailyMinutesDown": {
+      "2025-06-12": 0
+    }
   }
 ]
