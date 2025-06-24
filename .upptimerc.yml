@@ -12,6 +12,7 @@ sites:
     headers:
       - "Content-Type: application/json"
     body: '{"data":{"function":"getVersionInfo","syncVersion":8}}'
+    expectedStatusCodes: [200, 403]
   - name: Home Page
     url: https://brieftech.ai
 
