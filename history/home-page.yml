@@ -1,7 +1,7 @@
 url: https://brieftech.ai
-status: up
-code: 200
-responseTime: 547
-lastUpdated: 2025-11-04T23:06:34.196Z
+status: down
+code: 500
+responseTime: 485
+lastUpdated: 2025-11-05T08:05:23.904Z
 startTime: 2025-02-18T13:28:18.112Z
 generator: Upptime <https://github.com/upptime/upptime>
