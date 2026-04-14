@@ -11,10 +11,10 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 253,
-    "timeDay": 165,
-    "timeWeek": 171,
-    "timeMonth": 172,
-    "timeYear": 259,
+    "timeDay": 156,
+    "timeWeek": 172,
+    "timeMonth": 173,
+    "timeYear": 258,
     "dailyMinutesDown": {}
   },
   {
@@ -23,15 +23,15 @@
     "icon": "https://discover.brieftech.ai/favicon.ico",
     "slug": "back-end-prod",
     "status": "up",
-    "uptime": "82.63%",
+    "uptime": "82.67%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "80.19%",
+    "uptimeYear": "80.46%",
     "time": 376,
-    "timeDay": 313,
-    "timeWeek": 407,
-    "timeMonth": 363,
+    "timeDay": 412,
+    "timeWeek": 422,
+    "timeMonth": 368,
     "timeYear": 377,
     "dailyMinutesDown": {
       "2025-09-24": 22,
@@ -105,8 +105,7 @@
       "2025-04-18": 1440,
       "2025-04-17": 1440,
       "2025-04-16": 1440,
-      "2025-04-15": 1440,
-      "2025-04-14": 1440
+      "2025-04-15": 1440
     }
   },
   {
@@ -121,10 +120,10 @@
     "uptimeMonth": "99.90%",
     "uptimeYear": "99.93%",
     "time": 611,
-    "timeDay": 496,
-    "timeWeek": 532,
-    "timeMonth": 525,
-    "timeYear": 611,
+    "timeDay": 484,
+    "timeWeek": 504,
+    "timeMonth": 532,
+    "timeYear": 610,
     "dailyMinutesDown": {
       "2026-04-02": 17,
       "2026-03-25": 29,
